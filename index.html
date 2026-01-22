@@ -1,20 +1,130 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>App Tombini</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tombini - Download App</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* camada escura sobre a imagem */
+.overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.box {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 35px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.logo {
+    width: 90px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+
+.info div {
+    background: rgba(255,255,255,0.1);
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.btn-download {
+    display: inline-block;
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #ff0000, #ff8c00);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(255,0,0,0.5);
+    margin-top: 10px;
+}
+
+.btn-download:hover {
+    transform: scale(1.04);
+    box-shadow: 0 15px 40px rgba(255,0,0,0.7);
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+</style>
 </head>
-<body style="background:#1f2d3d; color:white; font-family:Arial; text-align:center; padding-top:100px;">
+<body>
 
-<h1>App Tombini</h1>
-<p>Baixe o aplicativo oficial da Tombini.</p>
+<div class="overlay">
+    <div class="box">
 
-<a href="AppTombini.apk">
-<button style="background:#f1c40f; border:none; padding:15px 30px; font-size:18px; border-radius:8px;">
-Baixar Aplicativo
-</button>
-</a>
+        <!-- LOGO (opcional) -->
+        <img class="logo" src="https://cdn-icons-png.flaticon.com/512/1995/1995470.png">
+
+        <h1>Tombini App</h1>
+        <div class="subtitle">Aplicativo oficial do Grupo Tombini</div>
+
+        <div class="info">
+            <div>📦 Android</div>
+            <div>⚡ Versão 1.0</div>
+            <div>🛡️ Seguro</div>
+        </div>
+
+        <!-- 🔥 AQUI VOCÊ COLOCA O LINK DO APK DO GITHUB -->
+        <a class="btn-download" href="AppTombini.apk" download>
+            ⬇️ Baixar Aplicativo
+        </a>
+
+        <div class="footer">
+            © 2026 Grupo Tombini • Todos os direitos reservados
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
