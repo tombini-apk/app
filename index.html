@@ -3,123 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tombini App - Download</title>
+<title>Tombini App - Download Oficial</title>
 
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* FUNDO MOBILE FRIENDLY */
+/* FUNDO PREMIUM COM CAMINHÃO */
 body {
-  background: url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7") no-repeat center center;
+  background: url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7") no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh;
 }
 
-/* ESCURECER FUNDO */
+/* OVERLAY */
 .overlay {
-  background: rgba(0,0,0,0.75);
+  background: linear-gradient(120deg, rgba(0,0,0,0.75), rgba(0,0,0,0.95));
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header img {
+  width: 45px;
+}
+
+header .menu a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+header .menu a:hover {
+  opacity: 1;
+}
+
+/* HERO */
+.hero {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 60px;
 }
 
-/* CAIXA PRINCIPAL */
-.box {
+.hero-box {
+  max-width: 1200px;
   width: 100%;
-  max-width: 420px;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  padding: 26px 22px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
   color: white;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
-/* LOGO */
-.logo {
-  width: 65px;
-  margin-bottom: 12px;
+/* TEXTO PRINCIPAL */
+.hero-text h1 {
+  font-size: 48px;
+  line-height: 1.1;
 }
 
-/* TÍTULO */
-h1 {
-  font-size: 26px;
-  margin-bottom: 8px;
+.hero-text span {
+  color: #ff9900;
 }
 
-.subtitle {
-  font-size: 14px;
+.hero-text p {
+  margin-top: 15px;
+  font-size: 17px;
   opacity: 0.85;
-  margin-bottom: 18px;
 }
 
-/* INFOS */
-.info {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.info span {
-  background: rgba(255,255,255,0.12);
-  padding: 7px 12px;
-  border-radius: 10px;
-  font-size: 12px;
-}
-
-/* BOTÃO DOWNLOAD */
+/* BOTÃO PREMIUM */
 .btn-download {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  font-size: 18px;
+  display: inline-block;
+  margin-top: 25px;
+  padding: 18px 45px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
   background: linear-gradient(135deg, #ff0000, #ff9900);
-  border-radius: 40px;
+  border-radius: 60px;
   text-decoration: none;
-  margin-top: 10px;
-  box-shadow: 0 12px 35px rgba(255,0,0,0.6);
-  transition: 0.25s;
+  box-shadow: 0 15px 40px rgba(255,0,0,0.6);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-download::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 60%);
+  animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .btn-download:hover {
-  transform: scale(1.03);
+  transform: scale(1.06);
 }
 
-/* TEXTO */
-.desc {
-  margin-top: 16px;
-  font-size: 13px;
+/* CELULAR */
+.phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone img {
+  width: 300px;
+  border-radius: 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+  transform: rotate(-4deg);
+}
+
+/* CARDS INFO */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px 80px;
+  color: white;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 14px;
   opacity: 0.85;
-  line-height: 1.5;
 }
 
 /* FOOTER */
-.footer {
-  margin-top: 18px;
-  font-size: 11px;
+footer {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-size: 13px;
   opacity: 0.6;
 }
 
-/* PC */
-@media(min-width: 900px) {
-  .box {
-    max-width: 520px;
-    padding: 35px;
+/* RESPONSIVO */
+@media(max-width: 900px) {
+  header {
+    padding: 15px 25px;
   }
-  h1 {
-    font-size: 32px;
+  .hero {
+    padding: 30px;
+  }
+  .hero-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+  }
+  .phone img {
+    transform: none;
+  }
+}
+
+@media(max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -127,35 +215,70 @@ h1 {
 <body>
 
 <div class="overlay">
-  <div class="box">
 
-    <!-- LOGO -->
-    <img class="logo" src="https://cdn-icons-png.flaticon.com/512/1995/1995470.png">
-
-    <h1>Tombini App</h1>
-    <div class="subtitle">Download oficial do aplicativo Tombini</div>
-
-    <div class="info">
-      <span>📱 Android</span>
-      <span>⚡ Leve</span>
-      <span>🔒 Seguro</span>
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <img src="https://cdn-icons-png.flaticon.com/512/1995/1995470.png">
+      Tombini
     </div>
-
-    <!-- LINK DO APK -->
-    <a class="btn-download" href="https://raw.githubusercontent.com/tombini-apk/app/main/tombini.apk">
-      ⬇️ Baixar Aplicativo
-    </a>
-
-    <div class="desc">
-      Baixe o aplicativo oficial do Grupo Tombini e tenha acesso rápido a
-      informações e recursos exclusivos diretamente no seu celular.
+    <div class="menu">
+      <a href="#">Início</a>
+      <a href="#">App</a>
+      <a href="#">Download</a>
+      <a href="#">Contato</a>
     </div>
+  </header>
 
-    <div class="footer">
-      © 2026 Grupo Tombini • Plataforma Oficial
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-box">
+
+      <div class="hero-text">
+        <h1>Baixe o <span>App Tombini</span><br>oficial agora</h1>
+        <p>
+          Plataforma digital do Grupo Tombini para acesso rápido a serviços,
+          informações e recursos exclusivos.
+        </p>
+
+        <!-- 🔥 LINK DO APK -->
+        <a class="btn-download" href="https://raw.githubusercontent.com/tombini-apk/app/main/tombini.apk">
+          ⬇️ Download Android
+        </a>
+      </div>
+
+      <div class="phone">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+      </div>
+
     </div>
+  </section>
 
-  </div>
+  <!-- CARDS -->
+  <section class="cards">
+    <div class="card">
+      <h3>⚡ Rápido</h3>
+      <p>Aplicativo leve e otimizado para qualquer celular Android.</p>
+    </div>
+    <div class="card">
+      <h3>🔒 Seguro</h3>
+      <p>Download direto e protegido sem risco de vírus.</p>
+    </div>
+    <div class="card">
+      <h3>📱 Android</h3>
+      <p>Compatível com a maioria dos dispositivos Android.</p>
+    </div>
+    <div class="card">
+      <h3>🚛 Tombini</h3>
+      <p>Desenvolvido para o Grupo Tombini e seus colaboradores.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Grupo Tombini • Plataforma Oficial
+  </footer>
+
 </div>
 
 </body>
